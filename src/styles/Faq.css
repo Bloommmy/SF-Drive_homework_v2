@@ -1,0 +1,29 @@
+.page-title, .page-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2% 15% 0% 15%;
+}
+
+.page-title-text{
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 120%;
+    text-align: center;
+    color: #1B1B1B;
+}
+
+.page-description-text {
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 147.3%;
+    color: #1B1B1B;
+}
+.page-svg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5% 0% 5% 0%;
+}

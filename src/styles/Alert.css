@@ -1,0 +1,49 @@
+.alert {
+    display: flex;
+    justify-content: space-between;
+    height: inherit;
+    position: relative;
+    margin-bottom: 14px;
+    border-radius: 6px;
+    width: 100%;
+    font-size: 20px;
+}
+
+.alert:hover {
+    background: rgba(97, 161, 153, 0.1);
+    cursor: pointer;
+}
+
+.alert-text {
+    padding: 18px 0px 19px 19px;
+}
+
+.alert-svg {
+    padding: 18px 19px 19px 19px;
+}
+
+.alert-off {
+    color: #1B1B1B;
+    background-color: #F7F7F8;
+}
+
+.alert-on {
+    color: #61A199;
+    background-color: rgba(97, 161, 153, 0.15);
+    font-weight: 500;
+    line-height: 147.3%;
+}
+
+.answer {
+    display: flex;
+    height: inherit;
+    position: relative;
+    width: 100%;
+    font-size: 20px;
+}
+
+.answer-text {
+    padding: 6px 19px 40px 19px;
+    font-weight: normal;
+    line-height: 147.3%;
+}

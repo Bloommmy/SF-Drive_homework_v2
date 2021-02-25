@@ -1,0 +1,36 @@
+.whole-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 6% 20% 0% 20%;
+}
+
+.part-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 74px;
+    width: 100%;
+}
+
+.part-form-title, .part-form-input {
+    display: flex;
+    justify-content: space-between;
+    height: inherit;
+    position: relative;
+    width: 100%;
+}
+
+.part-form-title {
+    margin-bottom: 20px;
+}
+
+.part-form-title-text {
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 147.3%;
+    color: #1B1B1B;
+}
+

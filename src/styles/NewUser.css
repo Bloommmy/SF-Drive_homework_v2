@@ -1,0 +1,23 @@
+.page-title, .step-number {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2% 15% 0% 15%;
+}
+
+.page-title-text{
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 120%;
+    text-align: center;
+    color: #1B1B1B;
+}
+
+.step-number-text {
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 147.3%;
+    text-align: center;
+    color: #828282;
+}

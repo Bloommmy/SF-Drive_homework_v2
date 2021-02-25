@@ -1,0 +1,15 @@
+
+
+.alert-secondary {
+    color: #383d41;
+    background-color: #F7F7F8;
+    border-color: #d6d8db;
+}
+
+.alert_all {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2% 15% 0% 15%;
+}
