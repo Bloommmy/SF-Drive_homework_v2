@@ -2,17 +2,8 @@ const express = require('express');
 
 const router = express.Router();
 
-let users = [
-    {
-        name: 'John'
-    },
-    {
-        name: 'Alex'
-    },
-    {
-        name: 'Ivan'
-    }
-]
+let users = [{ name: "John" }, { name: "Alex" }, { name: "Ivan" }]
+
 
 router.get('/', (req, res) => {
     res.send(users);

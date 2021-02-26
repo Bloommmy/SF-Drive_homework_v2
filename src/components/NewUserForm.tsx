@@ -1,6 +1,7 @@
 import * as React from "react";
 import "../styles/NewUserForm.css"
 import Fields from "./Fields";
+import Axios from "Axios";
 import {useEffect, useState} from "react";
 
 function NewUserForm() {
@@ -16,13 +17,6 @@ function NewUserForm() {
 
     const [driverLicenseSeriesNumber, setDriverLicenseSeriesNumber] = useState("");
     const [driverLicenseDateIssue, setDriverLicenseDateIssue] = useState("");
-
-    const [users, setUsers] = useState([]);
-    useEffect(() => {
-        fetch('/users')
-            .then(res => res.json())
-            .then(json => setUsers(json));
-    }, [])
 
     function onFullNameChange(e) {
         setFullName(e.target.value);
@@ -55,6 +49,15 @@ function NewUserForm() {
     }
     function onDriverLicenseDateIssue(e) {
         setDriverLicenseDateIssue(e.target.value);
+    }
+
+    const [status, setStatus] = React.useState(false);
+
+    function onStatus() {
+        if (fullName != "") {
+            setStatus(true);
+            console.log(fullName, status);
+        }
     }
 
     let formBlocks = [
@@ -154,24 +157,39 @@ function NewUserForm() {
     ]
 
     function onSubmit(e) {
+        onStatus();
         e.preventDefault();
-        console.log("fullName:",fullName);
-        console.log("dateBirth:",dateBirth);
-        console.log("email:",email);
-        console.log("phone:",phone);
-        console.log("passportSeriesNumber:",passportSeriesNumber);
-        console.log("passportDateIssue:",passportDateIssue);
-        console.log("passportIssuedBy:",passportIssuedBy);
-        console.log("passportDepartmentCode:",passportDepartmentCode);
-        console.log("driverLicenseSeriesNumber:",driverLicenseSeriesNumber);
-        console.log("driverLicenseDateIssue:",driverLicenseDateIssue);
+        Axios.post('/users', { fullName })
+            .then(res => res.data)
+            .then(data => console.log(data))
+        console.log({
+            status: status,
+            fullName: fullName,
+            dateBirth: dateBirth,
+            email: email,
+            phone: phone,
+            passportSeriesNumber: passportSeriesNumber,
+            passportDateIssue: passportDateIssue,
+            passportIssuedBy: passportIssuedBy,
+            passportDepartmentCode: passportDepartmentCode,
+            driverLicenseSeriesNumber: driverLicenseSeriesNumber,
+            driverLicenseDateIssue: driverLicenseDateIssue
+        });
     }
+
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        fetch('/users')
+            .then(res => res.json())
+            .then(json => console.log(json));
+    }, [])
 
     return (
         <>
             <div className='whole-form'>
                 {users.map(u => <div>{ u.name }</div>)}
-                <form className='form-input'>
+                <form className='form-input-all'>
                 {formBlocks.map((block) =>
                     <div className='part-form'>
                         <div className='part-form-title'>
@@ -180,11 +198,17 @@ function NewUserForm() {
                         <Fields fields={ block.fields }/>
                     </div>
                 )}
-                <button type="submit" onClick={onSubmit}>Продолжить</button>
                 </form>
+                <div className='from-basement'>
+                    <button className='from-basement-button' type="submit" onClick={onSubmit}>
+                        <div className='from-basement-button-text'>
+                            Продолжить
+                        </div>
+                    </button>
+                </div>
             </div>
         </>
     );
-};
+}
 
 export default NewUserForm;

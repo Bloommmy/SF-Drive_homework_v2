@@ -1,12 +1,13 @@
 import * as React from "react";
 import "../styles/Fields.css"
+import Country from "./Country";
 
 function Fields({ fields }) {
     return (
         <>
             <div className='part-form-input'>
                 <div className='form-input'>
-                    {fields.map((field) =>
+                    {fields.map(field =>
                         <div className='form-input-str'>
                             <div className='form-input-str-label'>
                                 <label htmlFor={ field.id }>{ field.label }</label>
@@ -21,5 +22,11 @@ function Fields({ fields }) {
         </>
     );
 };
+
+Fields.defaultProps = {
+    hint: "",
+    value: "",
+    onChange: ""
+}
 
 export default Fields;

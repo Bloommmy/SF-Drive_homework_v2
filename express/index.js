@@ -1,7 +1,11 @@
 const express = require('express');
+
 const { usersRouter } = require('./user-router')
 
 const app = express();
+
+app.set('port', 8080);
+
 
 function loggerMiddleware(req, res, next) {
     console.log(`[${req.method}] - ${req.url}`);
@@ -39,6 +43,6 @@ app.get('/users/:id', (req,res) => {
     res.send(`You have receid dsts on user #${id} with ${sorting} sorting`)
 });
 
-app.listen(8080, () => {
-    console.log('Server is listening on port 8080')
+app.listen(app.get('port'), function() {
+    console.log('Node App Started');
 });

@@ -34,3 +34,40 @@
     color: #1B1B1B;
 }
 
+.from-basement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Фиксированное положение */
+    bottom: 0%; /* Расстояние сверху */
+    width: 100%;
+    background: #FFFFFF; /* Цвет фона */
+    box-shadow: 0px -1px 0px #DEE2E4;
+    height: 84px;
+
+}
+.from-basement-button {
+    padding: 16px 40px;
+    border-radius: 6px;
+    border: 0px solid #E6E6E6;
+    background: #E6E6E6;
+
+}
+
+.from-basement-button-text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #B4B5BD;
+}
+
+.form-input-all {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 74px;
+    width: 100%;
+}

@@ -65,3 +65,8 @@ header .some-button {
     font-size: 16px;
     line-height: 19px;
 }
+
+a {
+    color: #000 !important;
+    text-decoration: none;
+}

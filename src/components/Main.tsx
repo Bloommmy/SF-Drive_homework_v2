@@ -9,11 +9,11 @@ function Main() {
     return (
         <main>
             <Switch>
-                <Route path="/users">
-                    <NewUser />
-                </Route>
-                <Route path="/faq">
+                <Route path='/faq'>
                     <Faq />
+                </Route>
+                <Route path='/'>
+                    <NewUser />
                 </Route>
             </Switch>
         </main>

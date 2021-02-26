@@ -10,8 +10,8 @@ function App() {
 
     return (
         <>
-            <Header />
             <BrowserRouter>
+                <Header />
                 <Main />
             </BrowserRouter>
         </>
